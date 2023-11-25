@@ -5,3 +5,5 @@ To get `node_modules` and `package-lock.json`, run <br>
 `> npm install`,
 And to start the server, run <br>
 `> npm run dev`
+
+There is a static website on pixtane.github.io/calculator, but it doesn't have currency exchange.
