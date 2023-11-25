@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Event Script</title>
+    <style>
+        /* Some basic styling for the cursor effect */
+        .equation {
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+        .cursor {
+            border-left: 2px solid black;
+            display: inline-block;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+  <div class="main-view">
+    <div class="input_equation">
+      <input type="text" name="equation" id="equation" />
+      <p id="result">``</p>
+      <p id="answer">`545.3344`</p>
+    </div>
+
+<!-- Your HTML content -->
+<div class="calculator">
+  <div class="element gray">`2nd`</div>
+  <div class="element gray" data-insert="deg(#)">`deg`</div>
+  <div class="element gray" data-insert="sin(#)">`sin`</div>
+  <div class="element gray" data-insert="cos(#)">`cos`</div>
+  <div class="element gray" data-insert="tan(#)">`tan`</div>
+
+  <div class="element gray" data-insert="^(#)">`x^y`</div>
+  <div class="element gray" data-insert="log10(#)">`lg`</div>
+  <div class="element gray" data-insert="log(#)">`ln`</div>
+  <div class="element gray" data-insert="(#">`(`</div>
+  <div class="element gray" data-insert=")#">`)`</div>
+
+  <div class="element gray" data-insert="sqrt(#)">`sqrt(x)`</div>
+  <div class="element orange">C</div>
+  <div class="element orange">&#9003;</div>
+  <div class="element orange">`%`</div>
+  <div class="element orange">`-:`</div>
+
+  <div class="element gray" data-insert="!#">`x!`</div>
+  <div class="element white" data-insert="7#">`7`</div>
+  <div class="element white">`8`</div>
+  <div class="element white">`9`</div>
+  <div class="element orange">`xx`</div>
+
+  <div class="element gray smaller">`x``/``y`</div>
+  <div class="element white">`4`</div>
+  <div class="element white">`5`</div>
+  <div class="element white">`6`</div>
+  <div class="element orange">&#8722;</div>
+
+  <div class="element gray" data-insert="pi#">`pi`</div>
+  <div class="element white">`1`</div>
+  <div class="element white">`2`</div>
+  <div class="element white">`3`</div>
+  <div class="element orange">`+`</div>
+
+  <div class="element white" data-insert="e#">`e`</div>
+  <div class="element white" data-insert="000#">`000`</div>
+  <div class="element white" data-insert="0#">`0`</div>
+  <div class="element white" data-insert=".#">`,`</div>
+  <div class="element orange">`=`</div>
+</div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      // Get all elements with class 'element' and 'data-insert'
+      var elements = document.querySelectorAll('.element[data-insert]');
+
+      // Get the input element
+      var equationInput = document.getElementById('equation');
+
+      // Iterate through each element
+      elements.forEach(function (element) {
+          // Add click event listener
+          element.addEventListener('click', function (event) {
+              // Prevent the default behavior to avoid losing focus
+              event.preventDefault();
+
+              // Get the value from data-insert attribute and replace '#' with an empty string
+              var valueToInsert = element.getAttribute('data-insert').replace('#', '');
+
+              // Get the current cursor position
+              var cursorPosition = equationInput.selectionStart;
+
+              // Get the current value of the input element
+              var currentValue = equationInput.value;
+
+              // Insert the value into the equation at the cursor position
+              var newValue = currentValue.slice(0, cursorPosition) + valueToInsert + currentValue.slice(cursorPosition);
+
+              // Update the input element value
+              equationInput.value = newValue;
+
+              // Move the cursor to the position after the inserted value
+              equationInput.setSelectionRange(cursorPosition + valueToInsert.length, cursorPosition + valueToInsert.length);
+          });
+      });
+  });
+</script>
+
+</body>
+</html>

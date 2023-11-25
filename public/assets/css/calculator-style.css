@@ -1,0 +1,225 @@
+html,
+body {
+  padding: 0px;
+  font-family: Roboto, sans-serif;
+  font-size: 2rem;
+  background-color: black;
+  color: #cccccc;
+}
+
+.white {
+  color: #cccccc;
+}
+
+.orange {
+  color: #fe7431;
+}
+
+.gray {
+  color: #7a7a7a;
+}
+
+.main-view {
+  position: fixed;
+  z-index: 5;
+  background-color: black;
+}
+
+.history {
+  height: 100vh;
+  width: 30vw;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  border-left: #7a7a7a 3px solid;
+  font-size: 1rem;
+  text-align: right;
+  z-index: 3;
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+
+.history-element {
+  margin-left: 3vw;
+  margin-right: 3vw;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+.history-element p.history-equation {
+  font-size: 1em;
+  color: #7a7a7a;
+}
+.history-element p.history-result {
+  font-size: 1.3em;
+  color: #9a9a9a;
+}
+
+.clear-history {
+  position: fixed;
+  right: 1vw;
+  bottom: 3vh;
+  height: 4vh;
+  width: 2vw;
+  background-color: black;
+  border: none;
+  z-index: 10;
+
+  /* make mouse to change cursor to click */
+  cursor:pointer;
+
+}
+
+.clear-history img {
+  object-fit:contain;
+  height: 100%;
+  width: 100%;
+  filter: invert(0.9);
+  
+}
+
+.clear-history img:hover {
+  filter: invert(1);
+}
+
+.clear-history img:active {
+  filter: invert(0.7);
+}
+
+
+sup {
+  font-size: 2rem;
+}
+
+.smaller {
+  font-size: 1.4rem;
+}
+
+sub {
+  font-size: 2rem;
+  vertical-align: baseline;
+}
+
+.calculator {
+  display: grid;
+  position: fixed;
+  width: calc(100vw - 30vw - 10vw);
+  grid-template-columns: repeat(5, 1fr);
+  column-width: 5vw;
+  gap: 0.5vw;
+  left: 4vw;
+  bottom: 4vh;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5vw;
+}
+
+.element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7.5vh;
+  /* MAKE TEXT UNSELECTABLE */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#equation {
+  position: absolute;
+  width: calc(100vw - 30vw - 10vw);
+  height: 5vh;
+  left: 4vw;
+  top: 4vh;
+  border: #7a7a7a0d 3px solid;
+  border-radius: 0.5vw;
+  padding: 0.5vw;
+  font-size: 1rem;
+  text-align: right;
+  background-color: #7a7a7a31;
+  color: #cccccc;
+}
+
+#result {
+  position: absolute;
+  font-size: 1rem;
+  top: 11vh;
+  left: 4vw;
+  width: calc(100vw - 30vw - 10vw);
+  text-align: right;
+}
+
+#answer {
+  position: absolute;
+  font-size: 1.5rem;
+  top: 24vh;
+  left: 4vw;
+  width: calc(100vw - 30vw - 10vw);
+  text-align: right;
+  z-index: 1;
+  background-color: black;
+}
+
+/*#region square root*/
+.square-root {
+  display: inline-block;
+  vertical-align: middle;
+  height: 69%;
+  border-top: 5px solid;
+  border-left: 5px solid;
+  transform: skew(-15deg);
+  transform-origin: bottom left;
+  position: relative;
+}
+
+.square-root:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 40%;
+  width: 5px;
+  left: -10px;
+  border-top: 5px solid;
+  border-right: 5px solid;
+  transform: skew(30deg);
+  transform-origin: bottom right;
+}
+
+.radicand {
+  display: inline-block;
+  padding-left: 0.3em;
+  transform: skew(15deg);
+}
+
+/*#endregion*/
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 0px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(59, 59, 59); 
+  border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #515151; 
+}

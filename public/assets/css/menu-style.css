@@ -1,0 +1,54 @@
+html,
+body {
+  padding: 0px;
+  font-family: Roboto, sans-serif;
+  font-size: 2rem;
+  background-color: black;
+  color: #cccccc;
+}
+
+body {
+    margin: 5vh 20vw 5vh 20vw
+}
+
+.category-name {
+    font-size: 2rem;
+    margin-bottom: 3vh;
+    margin-top: 5vh;
+}
+
+/* make a horizontal line to the end of container */
+.category-name::after {
+    margin-top: 1vh;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #cccccc;
+}
+
+.category {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.element {
+    display: flex;
+    height: 10vh;
+    width: 10vh;
+}
+
+.icon {
+    object-fit:contain;
+    height: 100%;
+    width: 100%;
+    filter: invert(0.9);
+}
+
+.icon:hover {
+    filter: invert(1);
+}
+
+.icon:active {
+    filter: invert(0.7);
+}

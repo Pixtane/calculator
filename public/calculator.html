@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/calculator-style.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/menu-button-style.css">
+    <script>
+      MathJax = {
+        loader: { load: ["input/asciimath", "output/chtml"] },
+      };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.min.js"></script>
+  </head>
+
+  <body>
+    <a class="btn_menu" href="./menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </a>
+
+    <div class="main-view">
+      <div class="input_equation">
+        <input type="text" name="equation" id="equation" />
+        <p id="result">``</p>
+        <p id="answer"></p>
+      </div>
+
+      <div class="calculator">
+        <div class="element gray" id="btn_2nd">`2nd`</div>
+        <div class="element gray" id="sin" data-insert="sin(#)">`sin`</div>
+        <div class="element gray" id="cos" data-insert="cos(#)">`cos`</div>
+        <div class="element gray" id="tan" data-insert="tan(#)">`tan`</div>
+        <div class="element gray" id="cot" data-insert="cot(#)">`cot`</div>
+
+        <div class="element gray" data-insert="^(#)">`x^y`</div>
+        <div class="element gray" data-insert="log10(#)">`lg`</div>
+        <div class="element gray" data-insert="log(#)">`ln`</div>
+        <div class="element gray" data-insert="(#">`(`</div>
+        <div class="element gray" data-insert=")#">`)`</div>
+
+        <div class="element gray" data-insert="sqrt(#)">`sqrt(x)`</div>
+        <div class="element orange" id="btn_delete">C</div>
+        <div class="element orange" id="btn_remove">&#9003;</div>
+        <div class="element orange" id="btn_percent">`%`</div>
+        <div class="element orange" data-insert="/#">`-:`</div>
+
+        <div class="element gray" data-insert="!#">`x!`</div>
+        <div class="element white" data-insert="7#">`7`</div>
+        <div class="element white" data-insert="8#">`8`</div>
+        <div class="element white" data-insert="9#">`9`</div>
+        <div class="element orange" data-insert="*#">`xx`</div>
+
+        <div class="element gray smaller" data-insert="1/#">`1``/``x`</div>
+        <div class="element white" data-insert="4#">`4`</div>
+        <div class="element white" data-insert="5#">`5`</div>
+        <div class="element white" data-insert="6#">`6`</div>
+        <div class="element orange" data-insert="-#">&#8722;</div>
+
+        <div class="element gray" data-insert="pi#">`pi`</div>
+        <div class="element white" data-insert="1#">`1`</div>
+        <div class="element white" data-insert="2#">`2`</div>
+        <div class="element white" data-insert="3#">`3`</div>
+        <div class="element orange" data-insert="+#">`+`</div>
+
+        <div class="element white" data-insert="e#">`e`</div>
+        <div class="element white" data-insert="000#">`000`</div>
+        <div class="element white" data-insert="0#">`0`</div>
+        <div class="element white" data-insert=".#">`,`</div>
+        <div class="element orange" id="btn_result">`=`</div>
+      </div>
+    </div>
+
+    <div class="history">
+    </div>
+
+    <button class="clear-history" title="Delete all history"><img src="./assets/img/trash.png" alt="Delete all"></button>
+
+    <script type="module" src="scripts/calculator-script.js"></script>
+  </body>
+</html>
