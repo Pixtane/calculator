@@ -17,6 +17,10 @@ body {
     margin-top: 5vh;
 }
 
+.disabled {
+    filter: invert(0.5);
+}
+
 /* make a horizontal line to the end of container */
 .category-name::after {
     margin-top: 1vh;
