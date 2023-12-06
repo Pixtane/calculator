@@ -78,7 +78,7 @@ function updateRates(inputElement) {
     return;
   }
 
-  fetch("http://pixtane.vsevolod.pp.ua/exchange-rates")
+  fetch("https://pixtane.vsevolod.pp.ua/exchange-rates")
     .then((response) => {
       // Check if the response status is OK (200)
       if (!response.ok) {
